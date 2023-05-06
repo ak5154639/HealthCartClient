@@ -80,8 +80,8 @@ export const pay = async (
       key: `${process.env.REACT_APP_RAZORPAY_KEY}`,
       amountTotal: Math.round(totalCost()) * 100,
       currency: 'INR',
-      name: `The Golden Deals`,
-      description: `Transaction for purchase on The Golden Deals`,
+      name: `Health Cart`,
+      description: `Transaction for purchase on Health Cart`,
       // image:`${process.env.myLogo}`,
       order_id: `${state.clientToken}`,
       handler: function (response) {
