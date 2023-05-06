@@ -1,4 +1,4 @@
-// import { Razorpay } from "razorpay-checkout";
+import { Razorpay } from "razorpay-checkout";
 import { createOrder, getRazorpayToken } from "./FetchApi";
 
 export const fetchData = async (cartListProduct, dispatch) => {
