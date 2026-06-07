@@ -2,7 +2,7 @@ import React, { Fragment, useContext, useState } from "react";
 import { useParams } from "react-router-dom";
 import { Alert } from "./Action";
 
-import moment from "moment";
+import dayjs from "dayjs";
 import { LayoutContext } from "../layout";
 import { deleteReview } from "./Action";
 import { isAuthenticate } from "../auth/fetchApi";
@@ -62,7 +62,7 @@ const AllReviews = (props) => {
                       <div className="flex flex-col">
                         <span>{item.user ? item.user.name : ""}</span>
                         <span className="text-sm text-yellow-700">
-                          {moment(item.createdAt).format("lll")}
+                          {dayjs(item.createdAt).format("lll")}
                         </span>
                       </div>
                       <div className="leading-tight mt-3">{item.review}</div>

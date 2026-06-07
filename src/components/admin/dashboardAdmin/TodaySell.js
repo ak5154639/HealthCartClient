@@ -1,6 +1,6 @@
 import React, { Fragment, useContext, useEffect } from "react";
 import { useHistory } from "react-router-dom";
-import moment from "moment";
+import dayjs from "dayjs";
 import { DashboardContext } from "./";
 import { todayAllOrders } from "./Action";
 
@@ -19,7 +19,7 @@ const SellTable = () => {
     let newList = [];
     if (data.totalOrders.Orders !== undefined) {
       data.totalOrders.Orders.forEach(function (elem) {
-        if (moment(elem.createdAt).format("LL") === moment().format("LL")) {
+        if (dayjs(elem.createdAt).format("LL") === dayjs().format("LL")) {
           newList = [...newList, elem];
         }
       });
@@ -135,7 +135,7 @@ const TodayOrderTable = ({ order }) => {
         </td>
         <td className="p-2 text-center">{order.address}</td>
         <td className="p-2 text-center">
-          {moment(order.createdAt).format("lll")}
+          {dayjs(order.createdAt).format("lll")}
         </td>
       </tr>
     </Fragment>

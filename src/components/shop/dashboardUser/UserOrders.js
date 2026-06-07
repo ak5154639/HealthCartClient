@@ -1,5 +1,5 @@
 import React, { Fragment, useEffect, useContext } from "react";
-import moment from "moment";
+import dayjs from "dayjs";
 import { fetchOrderByUser, cancelOrderReq } from "./Action";
 import Layout, { DashboardUserContext } from "./Layout";
 
@@ -83,10 +83,10 @@ const TableBody = ({ order }) => {
           {order.transactionId}
         </td>
         <td className="hover:bg-gray-200 p-2 text-center">
-          {moment(order.createdAt).format("lll")}
+          {dayjs(order.createdAt).format("lll")}
         </td>
         <td className="hover:bg-gray-200 p-2 text-center">
-          {moment(order.updatedAt).format("lll")}
+          {dayjs(order.updatedAt).format("lll")}
         </td>
         
         {(order.status === "Not processed" || order.status ==="Processing")&&(<td className="hover:bg-gray-200 p-2 text-center">

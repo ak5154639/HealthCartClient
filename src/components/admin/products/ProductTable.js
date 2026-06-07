@@ -1,6 +1,6 @@
 import React, { Fragment, useContext, useEffect, useState } from "react";
 import { getAllProduct, deleteProduct } from "./FetchApi";
-import moment from "moment";
+import dayjs from "dayjs";
 import { ProductContext } from "./index";
 
 // const apiURL = process.env.REACT_APP_API_URL;
@@ -158,10 +158,10 @@ const ProductTable = ({ product, deleteProduct, editProduct }) => {
         <td className="p-2 text-center">{product.pCategory.cName}</td>
         <td className="p-2 text-center">{product.pOffer}</td>
         <td className="p-2 text-center">
-          {moment(product.createdAt).format("lll")}
+          {dayjs(product.createdAt).format("lll")}
         </td>
         <td className="p-2 text-center">
-          {moment(product.updatedAt).format("lll")}
+          {dayjs(product.updatedAt).format("lll")}
         </td>
         <td className="p-2 flex items-center justify-center">
           <span

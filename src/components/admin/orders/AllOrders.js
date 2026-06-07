@@ -1,5 +1,5 @@
 import React, { Fragment, useContext, useEffect } from "react";
-import moment from "moment";
+import dayjs from "dayjs";
 
 import { OrderContext } from "./index";
 import { fetchData, editOrderReq, deleteOrderReq } from "./Actions";
@@ -150,10 +150,10 @@ const CategoryTable = ({ order, editOrder }) => {
         <td className="hover:bg-gray-200 p-2 text-center">{order.phone}</td>
         <td className="hover:bg-gray-200 p-2 text-center">{order.address}</td>
         <td className="hover:bg-gray-200 p-2 text-center">
-          {moment(order.createdAt).format("lll")}
+          {dayjs(order.createdAt).format("lll")}
         </td>
         <td className="hover:bg-gray-200 p-2 text-center">
-          {moment(order.updatedAt).format("lll")}
+          {dayjs(order.updatedAt).format("lll")}
         </td>
         <td className="p-2 flex items-center justify-center">
           <span

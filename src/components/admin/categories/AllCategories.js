@@ -1,7 +1,7 @@
 import React, { Fragment, useContext, useEffect } from "react";
 import { getAllCategory, deleteCategory } from "./FetchApi";
 import { CategoryContext } from "./index";
-import moment from "moment";
+import dayjs from "dayjs";
 
 // const apiURL = process.env.REACT_APP_API_URL;
 
@@ -154,10 +154,10 @@ const CategoryTable = ({ category, deleteCat, editCat }) => {
           )}
         </td>
         <td className="p-2 text-center">
-          {moment(category.createdAt).format("lll")}
+          {dayjs(category.createdAt).format("lll")}
         </td>
         <td className="p-2 text-center">
-          {moment(category.updatedAt).format("lll")}
+          {dayjs(category.updatedAt).format("lll")}
         </td>
         <td className="p-2 flex items-center justify-center">
           <span
